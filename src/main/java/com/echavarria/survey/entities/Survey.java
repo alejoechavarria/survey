@@ -75,4 +75,15 @@ public class Survey {
     public void setQuestions(List<Question> questions) {
         this.questions = questions;
     }
+
+    @Override
+    public String toString() {
+        return "Survey{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", topic='" + topic + '\'' +
+                ", questions=" + questions +
+                '}';
+    }
 }

@@ -27,7 +27,7 @@ public class SurveyServices {
     }
 
     public Boolean isAddressEmailValid(String addressEmail) {
-        String regx = "^[A-Za-z0-9+_.-]+@(.+)$";
+        String regx = "([a-z0-9]+(\\.?[a-z0-9])*)+@(([a-z]+)\\.([a-z]+))+";
         Pattern pattern = Pattern.compile(regx);
         Matcher matcher = pattern.matcher(addressEmail);
         return matcher.matches();
