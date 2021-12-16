@@ -1,0 +1,1 @@
+INSERT INTO TOPICS (TOPIC_ID, TOPIC_NAME) VALUES (NULL, 'satisfaction survey');
