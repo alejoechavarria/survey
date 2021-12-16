@@ -17,8 +17,12 @@ public class SurveyController {
 
     @PostMapping("")
     public Survey saveSurvey(@RequestBody Survey survey) {
-        System.out.println("log info: " + survey.toString());
         return surveyServices.saveSurvey(survey);
+    }
+
+    @GetMapping("/{id}")
+    public Survey getSurveyById(@PathVariable("id") Long id) {
+        return surveyServices.retrieveSurveyById(id);
     }
 
 }

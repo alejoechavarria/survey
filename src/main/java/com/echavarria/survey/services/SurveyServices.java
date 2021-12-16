@@ -1,10 +1,12 @@
 package com.echavarria.survey.services;
 
 import com.echavarria.survey.entities.Survey;
+import com.echavarria.survey.exceptions.EntityNotFoundException;
 import com.echavarria.survey.exceptions.MissingRequiredDataException;
 import com.echavarria.survey.repositories.SurveyRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,5 +36,11 @@ public class SurveyServices {
     public Survey saveSurvey(Survey survey) {
         surveyValidator(survey);
         return surveyRepository.save(survey);
+    }
+
+    public Survey retrieveSurveyById(Long id) {
+        Optional<Survey> survey = surveyRepository.findById(id);
+        if (survey.isEmpty()) throw new EntityNotFoundException("The requested survey has not been found.");
+        return survey.get();
     }
 }
