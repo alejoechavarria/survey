@@ -19,8 +19,53 @@ _Project has developed on Github in Java language by using Intellij Idea Communi
 
 ### Project Execution
 
-* [http://localhost:8080/](http://localhost:8080/) URL for postman
+* [http://localhost:8080/api](http://localhost:8080/) URL for postman
 * [http://localhost:8080/h2-console](http://localhost:8080/h2-console) URL for db interface
+
+### Services
+
+#### Save a new satisfaction survey:
+* **Path:** "api-host/survey"
+* **Example body**:
+
+```
+{
+	"username": "Alejandro E",
+	"emailAddress": "alejo@gmail.com",
+	"topic": "Satisfaction Survey",
+	"questions": [
+			{
+				"description": "¿Cómo le parecio el servicio?",
+				"type": "INPUT",
+				"answer": "Excelente servicio"
+			}
+		]
+	
+}
+```
+
+#### Consult an existing survey:
+* **Path:** "api-host/survey/{id}"
+* **Example of response**:
+
+
+```
+{
+    "id": 1,
+    "username": "Alejandro E",
+    "emailAddress": "alejo@gmail.com",
+    "topic": "Satisfaction Survey",
+    "questions": [
+        {
+            "id": 1,
+            "description": "¿Cómo le parecio el servicio?",
+            "type": "INPUT",
+            "answer": "Excelente servicio"
+        }
+    ]
+}
+
+```
 
 
 ## Database Organization
