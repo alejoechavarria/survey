@@ -1,7 +1,7 @@
 package com.echavarria.survey.exceptions;
 
-public class EntityNotFound extends RuntimeException {
-    public EntityNotFound(String message) {
+public class EntityNotFoundException extends RuntimeException {
+    public EntityNotFoundException(String message) {
         super(message);
     }
 }

@@ -1,7 +1,7 @@
 package com.echavarria.survey.exceptions;
 
-public class EntityAlreadyExist extends RuntimeException {
-    public EntityAlreadyExist(String message) {
+public class EntityAlreadyExistException extends RuntimeException {
+    public EntityAlreadyExistException(String message) {
         super(message);
     }
 }
